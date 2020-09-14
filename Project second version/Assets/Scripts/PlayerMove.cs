@@ -11,7 +11,7 @@ enum Direction
 }
 public class PlayerMove : MonoBehaviour
 {
-    public int speed;
+    public double speed;
     Direction dir = Direction.right;
     
 
@@ -33,6 +33,8 @@ public class PlayerMove : MonoBehaviour
         {
             dir = Direction.right;
         }
+
+        
     }
 
     private void FixedUpdate()
@@ -40,21 +42,19 @@ public class PlayerMove : MonoBehaviour
         switch (dir)
         {
             case Direction.up:
-                iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", speed, "easetype", iTween.EaseType.linear));
+                if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", speed, "easetype", iTween.EaseType.linear));
                 break;
             case Direction.left:
-                iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", speed, "easetype", iTween.EaseType.linear));
+                if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", speed, "easetype", iTween.EaseType.linear));
                 break;
             case Direction.down:
-                iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", speed, "easetype", iTween.EaseType.linear));
+                if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", speed, "easetype", iTween.EaseType.linear));
                 break;
             case Direction.right:
-                iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", speed, "easetype", iTween.EaseType.linear));
+                if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", speed, "easetype", iTween.EaseType.linear));
                 break;
             default:
                 break;
         }
-
-        //iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0,0,2), "time", speed, "easetype", iTween.EaseType.linear));
     }
 }
