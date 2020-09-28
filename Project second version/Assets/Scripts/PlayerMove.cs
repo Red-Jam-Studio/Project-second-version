@@ -21,8 +21,6 @@ public class PlayerMove : MonoBehaviour
     {
         GetNextDirection(); // Установка последней нажатой клавиши в качестве следующего направления
         ChangeDirection();
-
-        
     }
 
     public void GetNextDirection() // Установка последней нажатой клавиши в качестве следующего направления
@@ -63,12 +61,6 @@ public class PlayerMove : MonoBehaviour
                 case Direction.up:
 
                     iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
-                    if (curDir == Direction.right)
-                    {
-                        iTween.RotateAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, -90, 0), "time", rotateSpeed, "easetype", iTween.EaseType.linear));
-                    }
-                    //iTween.RotateAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", rotateSpeed, "easetype", iTween.EaseType.linear));
-                    //curDir = Direction.up;
 
                     break;
 
