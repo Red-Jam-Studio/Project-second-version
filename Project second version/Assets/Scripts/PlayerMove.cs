@@ -56,29 +56,121 @@ public class PlayerMove : MonoBehaviour
     {
         if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) // Если в центре тайла
         {
-            switch (nextDir) // Выбор направления движения в зависимости от следующего направление движения
+            switch (nextDir) // Выбор смены движения в зависимости от следующего направление движения
             {
                 case Direction.up:
 
-                    iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                    if (curDir == Direction.left || curDir == Direction.right)
+                    {
+                        iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        curDir = Direction.up;
+                    }
+                    else
+                    {
+                        if (curDir == Direction.up)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.left)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.down)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.right)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                    }
 
                     break;
 
                 case Direction.left:
 
-                    iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                    if (curDir == Direction.up || curDir == Direction.down)
+                    {
+                        iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        curDir = Direction.left;
+                    }
+                    else
+                    {
+                        if (curDir == Direction.up)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.left)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.down)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.right)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                    }
 
                     break;
 
                 case Direction.down:
 
-                    iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                    if (curDir == Direction.left || curDir == Direction.right) 
+                    { 
+                        iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        curDir = Direction.down;
+                    }
+                    else
+                    {
+                        if (curDir == Direction.up)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.left)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.down)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.right)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                    }
 
                     break;
 
                 case Direction.right:
 
-                    iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                    if (curDir == Direction.up || curDir == Direction.down)
+                    {
+                        iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        curDir = Direction.right;
+                    }
+                    else
+                    {
+                        if (curDir == Direction.up)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, 2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.left)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(-2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.down)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(0, 0, -2), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                        else if (curDir == Direction.right)
+                        {
+                            iTween.MoveAdd(this.gameObject, iTween.Hash("amount", new Vector3(2, 0, 0), "time", moveSpeed * 0.1, "easetype", iTween.EaseType.linear));
+                        }
+                    }
 
                     break;
 
