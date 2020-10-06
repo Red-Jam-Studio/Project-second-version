@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8775299398034138422}
   - component: {fileID: 7354394881849281166}
   - component: {fileID: 4494970982622455076}
-  - component: {fileID: -420593252282967731}
+  - component: {fileID: -4230801657421257165}
   m_Layer: 0
   m_Name: battery
   m_TagString: Untagged
@@ -89,12 +89,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8957049210978239588}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-420593252282967731
+--- !u!114 &-4230801657421257165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8957049210978239588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3eed0588f4d314a835b773c3a94abf, type: 3}
+  m_Script: {fileID: 11500000, guid: 75cdedaa6ee9cdf44b65c6357a1700cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: {fileID: 0}

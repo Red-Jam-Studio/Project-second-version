@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6781437630257739126}
   - component: {fileID: 8020055982442876651}
   - component: {fileID: 7717178361409445600}
+  - component: {fileID: -2998006622283849199}
   m_Layer: 0
   m_Name: WallTile
   m_TagString: Untagged
@@ -103,8 +104,21 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140569932205514988}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 2, z: 10}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-2998006622283849199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140569932205514988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077e037c31de6264e93413923c1c16fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WallEncounter: {fileID: 0}

@@ -74,4 +74,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(12);
     }
+
+    public void Test()
+    {
+        SceneManager.LoadScene(13);
+    }
 }
