@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class BatteryTrigger : MonoBehaviour
 {
-    public int num;
-    public int n = 0;
-    public GameObject Door;
+    public GameObject Helper;
+
+    public HelperWin helperWin;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             transform.Translate(new Vector3(10, -10, 10));
-
-            n++;
-
-            if (n == num)
-            {
-                Destroy(Door);
-            }
-
-            Debug.Log(n);
+            helperWin = Helper.GetComponent<HelperWin>();
+            helperWin.Counter();
         }
     }
 }
