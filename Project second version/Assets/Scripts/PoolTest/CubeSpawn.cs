@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class CubeSpawn : MonoBehaviour
 {
-    public GameObject PoolCube;
-
     void FixedUpdate()
     {
-        Instantiate(PoolCube, transform.position, Quaternion.identity);
+        ObjectPooler.Instance.SpawnFromPool("Cube", transform.position, Quaternion.identity);
     }
 }
