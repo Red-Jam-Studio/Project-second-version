@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 561081045723438626}
   - component: {fileID: 710896918062320862}
   - component: {fileID: 5540501179051309575}
+  - component: {fileID: -9033409258491041992}
   m_Layer: 0
   m_Name: TailCube
   m_TagString: Untagged
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-9033409258491041992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110182810687358130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ac8f7151b8f8c4182a4e50e30f86f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}

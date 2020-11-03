@@ -5,8 +5,12 @@ using UnityEngine;
 public class TailCubeSpawner : MonoBehaviour
 {
     bool hadBeenSpawned = false;
-    public GameObject tailCube;
+    public GameObject player;
 
+    private void Start()
+    {
+        StartCoroutine(TailCubeWait());
+    }
     void Update()
     {
         if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0))
@@ -14,12 +18,18 @@ public class TailCubeSpawner : MonoBehaviour
             if (!hadBeenSpawned)
             {
                 hadBeenSpawned = true;
-                Instantiate(tailCube, transform.position, Quaternion.identity);
+
+                ObjectPooler.Instance.SpawnFromPool("TailCube", player.transform.position, Quaternion.identity);
             }
         }
         else
         {
             hadBeenSpawned = false;
         }
+    }
+
+    IEnumerator TailCubeWait()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

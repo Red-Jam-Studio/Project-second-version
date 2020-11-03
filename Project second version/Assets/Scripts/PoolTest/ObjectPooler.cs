@@ -21,7 +21,7 @@ public class ObjectPooler : MonoBehaviour
     }
     #endregion
 
-    public List<Pool> pools;
+    public List<Pool> poolList;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
 
@@ -29,18 +29,18 @@ public class ObjectPooler : MonoBehaviour
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
+        foreach (Pool pl in poolList)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for (int i = 0; i < pool.size; i++)
+            for (int i = 0; i < pl.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
+                GameObject obj = Instantiate(pl.prefab);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
-            poolDictionary.Add(pool.tag, objectPool);
+            poolDictionary.Add(pl.tag, objectPool);
         }
     }
 
