@@ -18,7 +18,7 @@ public class WinTrigger : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene(13);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex)+1);
         Win.SetActive(false);
         Time.timeScale = 1;
     }

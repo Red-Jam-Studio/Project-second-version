@@ -17,7 +17,7 @@ public class Encounter : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene(13);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         WallEncounter.SetActive(false);
         Time.timeScale = 1;
     }
