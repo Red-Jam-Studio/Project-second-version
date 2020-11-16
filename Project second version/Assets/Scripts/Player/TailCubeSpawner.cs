@@ -9,7 +9,10 @@ public class TailCubeSpawner : MonoBehaviour
 
     private void Start()
     {
+        Behaviour TCE = (Behaviour)GameObject.FindWithTag("TailCube").GetComponent("Encounter");
+        TCE.enabled = false;
         StartCoroutine(TailCubeWait());
+        TCE.enabled = true;
     }
     void Update()
     {
@@ -18,7 +21,8 @@ public class TailCubeSpawner : MonoBehaviour
             if (!hadBeenSpawned)
             {
                 hadBeenSpawned = true;
-
+                
+                
                 ObjectPooler.Instance.SpawnFromPool("TailCube", player.transform.position, Quaternion.identity);
             }
         }
@@ -30,6 +34,6 @@ public class TailCubeSpawner : MonoBehaviour
 
     IEnumerator TailCubeWait()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
     }
 }

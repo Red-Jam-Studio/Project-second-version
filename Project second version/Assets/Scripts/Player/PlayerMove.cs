@@ -32,7 +32,7 @@ public class PlayerMove : MonoBehaviour
         var input = Input.inputString;
         if (!string.IsNullOrEmpty(input))
         {
-            Debug.Log("Getting Fucking Input");
+            //Debug.Log("Getting Fucking Input");
             switch (input)
             {
                 case "w":
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
             isCenter = false;
             if ((transform.position.x % 2 == 0) && (transform.position.z % 2 == 0)) // Если в центре тайла
             {
-                Debug.Log("Center");
+                //Debug.Log("Center");
                 switch (nextDir) // Смена движения в зависимости от следующего направление движения
                 {
                     case Direction.up:
