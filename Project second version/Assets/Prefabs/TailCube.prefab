@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 710896918062320862}
   - component: {fileID: 5540501179051309575}
   - component: {fileID: -9033409258491041992}
-  - component: {fileID: -563030442086756070}
   m_Layer: 0
   m_Name: TailCube
   m_TagString: Untagged
@@ -110,17 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5397687241756486379, guid: 747d492dcaa41b44399437e938f47d25, type: 3}
---- !u!114 &-563030442086756070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110182810687358130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077e037c31de6264e93413923c1c16fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WallEncounter: {fileID: 1045246859159562962, guid: 4d794f63cf740ae4fa06dfe7e664826f,
-    type: 3}

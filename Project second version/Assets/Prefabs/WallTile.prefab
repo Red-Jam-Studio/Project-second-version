@@ -123,4 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077e037c31de6264e93413923c1c16fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallEncounter: {fileID: 0}
+  WallEncounter: {fileID: 4274151646542461276, guid: 4d794f63cf740ae4fa06dfe7e664826f,
+    type: 3}
